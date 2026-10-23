@@ -1,0 +1,36 @@
+.ficto-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 9em;
+    margin-bottom: 2em;
+    padding: 20px;
+}
+
+.ficto-main p {
+    font-size: .9em;
+}
+
+.ficto-docs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    margin-bottom: 2em;
+}
+
+.ficto-img {
+    width: 120px;
+}
+.ficto-docs a {
+    color: #429045;
+}
+
+.ficto-docs a:hover {
+    text-decoration: underline;
+}
+
+footer {
+		margin-top: 2em;
+}

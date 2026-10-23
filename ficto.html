@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="pages/assets/Css/images/android-icon-192x192.png" />
+    <link rel="stylesheet" href="pages/assets/Css/mesclagem.css">
+    <link rel="stylesheet" href="pages/assets/Css/ficto.css">
+    
+        <!-- Título da página -->
+   <title>SNCT 2025</title>
+    
+    <!-- Meta descrição para o Google -->
+    <meta name="description" content="21ª Semana Nacional de Ciência e Tecnologia (SNCT) no IFPI Campus Pedro II! Com o tema 'Biomas do Brasil: Diversidade, Saberes e Tecnologias Sociais', vamos explorar a riqueza natural do nosso país e da nossa região além das inovações que nos conectam ao meio ambiente. Junte-se a nós nessa jornada de conhecimento e sustentabilidade!">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="pages/assets/Css/images/android-icon-192x192.png" type="image/x-icon">
+    
+    <!-- Outros meta tags recomendados -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SNCT">
+    <meta property="og:title" content="SNCTP2">
+    <meta property="og:description" content="21ª Semana Nacional de Ciência e Tecnologia 🌎🌱
+    IFPI - CAMPUS PEDRO II">
+    <meta property="og:image" content="pages/assets/Css/images/SNCT banner .png">
+    <meta property="og:url" content="https://www.snctp2.org">
+    <meta property="og:type" content="website">
+
+
+</head>
+
+<body>
+
+  <header>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid bg-body-tertiary" id="nav-bar">
+          <a class="navbar-brand" href="index.html">
+            <img src="pages/assets/Css/images/logo-branca.png" width="250" height="100">
+          </a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="me-5 mb-2 mb-lg-0"></div>
+            <div class="me-auto mb-2 mb-lg-0"></div>
+            <ul class="nav navbar-nav nav-underline ">
+              <li class="nav-item">
+                  <a class="nav-link" href="ficto.html">FICTO 2025</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="submissao.html">Submissão de Projetos 2025</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Mídias
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="midia2025.html">Mídias 2025</a></li>
+                    <li><a class="dropdown-item" href="midia2024.html">Mídias 2024</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Programação
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="programacao.html?ano=2025">Programação 2025</a></li>
+                    <li><a class="dropdown-item" href="programacao.html?ano=2024">Programação 2024</a></li>
+                  </ul>
+              </li>
+          </ul>
+              <div class="me-5"></div>
+          </div>
+        </div>
+    </nav>
+  </header>
+
+  <main class="ficto-main">
+    <h1 class="text-uppercase mb-5">ficto 2025</h1>
+    <h6 id="descricao" class="text-capitalize"></h6>
+    <!-- <p id="date" style="color: red;"></p> -->
+    <div class="ficto-docs-container" id="ficto-docs-container"></div>
+    <button class="text-capitalize">submeter projetos</button>
+    <section class="d-flex flex-column">
+        <h2 class="text-capitalize mt-5">lista de trabalhos inscritos</h2>
+        <div id="carouselTrabalhos" class="carousel slide shadow-sm rounded px-2">
+            <div class="carousel-indicators" id="indicatorsTrabalhos"></div>
+            <div class="carousel-inner" id="innerTrabalhos"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselTrabalhos" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselTrabalhos" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </section>
+
+    <section class="d-flex flex-column mt-5">
+        <div id="carouselFicto" class="carousel slide shadow-sm rounded px-2">
+            <div class="carousel-indicators" id="indicatorsFicto"></div>
+            <div class="carousel-inner" id="innerFicto"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselFicto" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselFicto" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </section>
+  </main>
+
+  <footer>
+
+    <div class="my-footer-1 bg-body-tertiary">
+      <div id="footer_content">
+          <div id="footer_contacts">
+              <p>Entre em contato</p>
+      
+              <ul id="footer_social_media">
+                  <li>
+                      <a href="https://www.instagram.com/snctp2/" class="footer-link" id="instagram">
+                          <i class="fa-brands fa-instagram"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://wa.me/558699795402" class="footer-link" id="whatsapp">
+                          <i class="fa-brands fa-whatsapp"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="mailto:snct.capedii@ifpi.edu.br" class="footer-link" id="gmail">
+                          <i class="fa-regular fa-envelope"></i>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      
+          <div id="footer_parceiros">
+            <p>Parceiros</p>
+            <ul class="footer-list" >
+              <li>
+                  <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjQi5ms3seIAxUgp
+                  ZUCHQ7wMqcQFnoECAgQAQ&url=https%3A%2F%2Fwww.ifpi.edu.br%2F&usg=AOvVaw3ainNoJC5I3oZe4_Ntt7qa&opi=89978449"
+                  class="footer-link"><img src="pages/assets/Css/images/Logo_ifpi_p2.png" loading="lazy" class="parceiros"></a>
+              </li>
+              <li>
+                <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjDj-fC3seIAxUxlJUCHcS
+                8Ae4QFnoECAgQAQ&url=https%3A%2F%2Fwww.fapepi.pi.gov.br%2F&usg=AOvVaw0L8kd1PVK1GLntXBLkhGsT&opi=89978449"
+                class="footer-link"><img src="pages/assets/Css/images/fapepi.png" loading="lazy" class="parceiros"></a>
+              </li>
+              <li>
+                <a href="https://www.google.com/url?sa=t&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjC9YzZ3seIAxV7r5UCHUziIDYQFnoECAgQAQ&url
+                =https%3A%2F%2Fwww.gov.br%2Fcnpq%2Fpt-br&usg=AOvVaw1Pw34a2InbZSBv0QjtfM6R&opi=89978449" class="footer-link">
+                <img src="pages/assets/Css/images/CNPQ Logo.png" loading="lazy" class="parceiros"></a>
+              </li>
+              <li>
+                  <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjglYTo3seIAxVmuJUCHd8LOp
+                  QQFnoECAgQAQ&url=https%3A%2F%2Fwww.gov.br%2Fmcti%2Fpt-br&usg=AOvVaw1tQrcRUZYRnsF8tbFVIzjR&opi=89978449" class="footer-link">
+                  <img src="pages/assets/Css/images/MCTI_logo.png" loading="lazy" class="parceiros"></a>
+              </li>
+            </ul>
+          </div>
+      </div>
+      <div id="copyright">
+          &#169; 2024 Todos os direitos reservados
+      </div>
+    </div>
+  
+  </footer>
+      
+  <script src="pages/assets/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="pages/assets/js/global.js"></script> -->
+  <script src="pages/assets/js/ficto.js"></script>
+</body>
+</html>

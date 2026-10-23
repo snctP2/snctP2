@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "date": "2024-10-25",
+      "location": "Pedro II",
+      "text": "Local: Rua Antonino Martins de Andrade, nº 750, Bairro Engenho Novo, Pedro II - Piauí Convidados: Profa. Dra. Josy Anteveli, Estud. Manoel Nunes",
+      "image_path": "pages/assets/Css/images/ARTE PROGRAMAÇÃO.png"
+    },
+    {
+      "date": "2024-10-30",
+      "location": "Lagoa de São Francisco",
+      "text": "Local: CETI Artur Gonçalves Avenida Raimundo Florindo, N° 450, Centro, Lagoa de São Francisco\r\nSecretário de Educação: Oziel dos Santos da Silva.\r\nConvidados: Profa. Estefânia ,\r\nProf. Gonçalo Neto",
+      "image_path": "pages/assets/Css/images/ARTE PROGRAMAÇÃO LSF 1.png"
+    },
+    {
+      "date": "2024-11-14",
+      "location": "Milton Brandão",
+      "text": "Local: Unidade Escolar Diogo da Silva Rua José Lino, Centro\r\nSecretário: Lisandro Gonçalves da Silva\r\nDiretora: Ana Maria Castro\r\nConvidados: Profa. Estefânia ,\r\nProf. Gonçalo Neto",
+      "image_path": "pages/assets/Css/images/ARTE PROGRAMAÇÃO  MB.png"
+    },
+    {
+      "date": "2024-11-21",
+      "location": "Pedro II",
+      "text": "Local: Rua Antonino Martins de Andrade, nº 750, Bairro Engenho Novo, Pedro II - Piauí Hora: 14:00",
+      "image_path": "pages/assets/Css/images/IMG-20241117-WA0016.jpg"
+    },
+    {
+      "date": "2024-11-22",
+      "location": "Pedro II",
+      "text": "R. Tertuliano B Filho, 467 - A Definir, Pedro II - PI, 64255-000 Hora: 14:00Hrs até 18:00Hrs",
+      "image_path": "pages/assets/Css/images/IMG-20241117-WA0015.jpg"
+    },
+    {
+      "date": "2025-02-11",
+      "location": "Sete Cidades",
+      "text": "Visitas Técnicas ao Parque Nacional de Sete cidades.\r\nO Parque Nacional de Sete Cidades  é um tesouro natural e arqueológico do Brasil,\r\nconhecido por suas formações rochosas impressionantes e antigas, que se assemelham a cidades esculpidas pela natureza. Este parque abrange uma área de aproximadamente 6.221 hectares, protegendo uma rica biodiversidade\r\ntípica do bioma da Caatinga, além de inúmeras pinturas rupestres que remontam a civilizações pré-históricas.\r\n\r\nObjetivo:\r\nSelecionar alunos do 8º, 9º anos e Ensino Médio para participar de uma visita\r\ntécnica ao Parque Nacional de Sete Cidades, promovendo o aprendizado sobre biomas brasileiros.",
+      "image_path": "pages/assets/Css/images/Imagem do WhatsApp de 2024-12-27 à(s) 15.24.59_f813f271.jpg"
+    }
+  ]
+}

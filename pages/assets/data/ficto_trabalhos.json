@@ -1,0 +1,36 @@
+{
+  "images": [
+    {
+      "posicao": 1,
+      "caminho": "pages/assets/Css/images/INSCRIÇÕES PROJETOS 1.png"
+    },
+    {
+      "posicao": 2,
+      "caminho": "pages/assets/Css/images/INSCRIÇÕES PROJETOS 2.png"
+    },
+    {
+      "posicao": 3,
+      "caminho": "pages/assets/Css/images/INSCRIÇÕES PROJETOS 3.png"
+    },
+    {
+      "posicao": 4,
+      "caminho": "pages/assets/Css/images/INSCRIÇÕES PROJETOS 4.png"
+    },
+    {
+      "posicao": 5,
+      "caminho": "pages/assets/Css/images/INSCRIÇÕES PROJETOS 5.png"
+    },
+    {
+      "posicao": 6,
+      "caminho": "pages/assets/Css/images/INSCRIÇÕES PROJETOS 6.png"
+    },
+    {
+      "posicao": 7,
+      "caminho": "pages/assets/Css/images/INSCRIÇÕES PROJETOS 7.png"
+    },
+    {
+      "posicao": 8,
+      "caminho": "pages/assets/Css/images/INSCRIÇÕES PROJETOS 8.png"
+    }
+  ]
+}
