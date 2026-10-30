@@ -46,8 +46,11 @@ function mediaHTML(m) {
 }
 
 async function fetchEventosPorAno(ano) {
-  const container = document.getElementById(`eventos${ano}`);
-  if (!container) return;
+  const container = document.getElementById(`eventos${ano}`) || document.getElementById('eventos');
+  if (!container) {
+    console.error(`Container de eventos não encontrado para o ano ${ano}.`);
+    return;
+  }
 
   try {
     const r = await fetch(DATA_DIR + 'midias.json');
@@ -61,7 +64,7 @@ async function fetchEventosPorAno(ano) {
     container.innerHTML = '';
 
     if (!eventos.length) {
-      container.innerHTML = `<p>Nenhum evento disponível para ${ano}.</p>`;
+      container.innerHTML = `<div class="media-empty"><p>Nenhum evento disponível para ${ano}.</p></div>`;
       return;
     }
 
@@ -76,7 +79,7 @@ async function fetchEventosPorAno(ano) {
           <a class="prev" onclick="passaSlide(-1, '${id}')">❮</a>
           <a class="next" onclick="passaSlide(1, '${id}')">❯</a>`;
       } else {
-        inner = '<p>Nenhuma mídia disponível para este evento.</p>';
+        inner = '<div class="media-empty"><p>Nenhuma mídia disponível para este evento.</p></div>';
       }
 
       wrap.innerHTML = `
@@ -136,13 +139,24 @@ async function loadCarousel() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Ano vem do nome do arquivo: midia2024.html / midia2025.html
-  const match = window.location.pathname.match(/midia(\d{4})(?:\.html)?$/i);
-  const ano = match ? parseInt(match[1], 10) : 0;
+function getPageYear() {
+  const params = new URLSearchParams(window.location.search);
+  const fromQuery = params.get('ano');
+  if (fromQuery) return parseInt(fromQuery, 10);
 
-  if (ano) fetchEventosPorAno(ano);
-  else console.error("Ano não identificado. O arquivo deve se chamar 'midiaYYYY.html'.");
+  const match = window.location.pathname.match(/midia(\d{4})(?:\.html)?$/i);
+  return match ? parseInt(match[1], 10) : 2026;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const ano = getPageYear();
+  const container = document.getElementById(`eventos${ano}`) || document.getElementById('eventos');
+  const title = document.getElementById('tituloEvento');
+
+  if (container) container.id = `eventos${ano}`;
+  if (title) title.textContent = `Eventos de ${ano}`;
+  if (container) fetchEventosPorAno(ano);
+  else console.error('Elemento de eventos não encontrado para o ano informado.');
 
   loadCarousel();
 });

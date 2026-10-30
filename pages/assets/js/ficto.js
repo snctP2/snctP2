@@ -6,9 +6,34 @@ async function getJSON(file) {
     return r.json();
 }
 
+function getPageYear() {
+    const params = new URLSearchParams(window.location.search);
+    const fromQuery = params.get('ano');
+    if (fromQuery) return Number(fromQuery);
+
+    const match = window.location.pathname.match(/ficto(\d{4})(?:\.html)?$/i);
+    return match ? Number(match[1]) : 2026;
+}
+
 async function loadInfo() {
     try {
-        const ficto = await getJSON('ficto.json');
+        const year = getPageYear();
+        const fileCandidates = year ? [`ficto_${year}.json`, 'ficto.json'] : ['ficto.json'];
+        let ficto = null;
+
+        for (const file of fileCandidates) {
+            try {
+                ficto = await getJSON(file);
+                break;
+            } catch (e) {
+                console.warn(`Arquivo ${file} não encontrado, tentando alternativa...`);
+            }
+        }
+
+        if (!ficto) {
+            throw new Error('Nenhum arquivo de FICTO disponível para esta página.');
+        }
+
         const $desc = document.getElementById('descricao');
         const $docs = document.getElementById('ficto-docs-container');
         $desc.innerHTML = '';
@@ -60,6 +85,11 @@ async function loadCarousel(file, innerId, indicatorsId, carouselId) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    const year = getPageYear();
+    const title = document.querySelector('.ficto-main h1');
+    if (title) title.textContent = `FICTO ${year}`;
+    document.title = `FICTO ${year}`;
+
     loadInfo();
     loadCarousel('ficto_trabalhos.json', 'innerTrabalhos', 'indicatorsTrabalhos', 'carouselTrabalhos');
     loadCarousel('ficto_bonelle.json', 'innerFicto', 'indicatorsFicto', 'carouselFicto');

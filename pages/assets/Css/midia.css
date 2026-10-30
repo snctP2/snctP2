@@ -103,6 +103,22 @@
     margin: 0 auto;
     justify-content: center;
 }
+
+.mediaHeight {
+    min-height: 55vh;
+    padding-bottom: 2rem;
+}
+
+.media-empty {
+    min-height: 32vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem 1rem 3rem;
+    color: #4b5563;
+}
+
 .midia hr{
     color: black;
     display: flex;

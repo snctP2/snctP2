@@ -8,29 +8,27 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="shortcut icon" href="pages/assets/Css/images/android-icon-192x192.png" />
-  <!-- <link rel="stylesheet" href="pages/assets/Css/mesclagem.css"> -->
+  <link rel="shortcut icon" href="pages/assets/Css/images/23-SNCT-ICON.png" />
   <link rel="stylesheet" href="pages/assets/Css/mesclagem.css">
 
 
   <!-- Título da página -->
-  <title>SNCT 2025</title>
+  <title>SNCT 2026</title>
 
   <!-- Meta descrição para o Google -->
   <meta name="description"
-    content="21ª Semana Nacional de Ciência e Tecnologia (SNCT) no IFPI Campus Pedro II! Com o tema 'Biomas do Brasil: Diversidade, Saberes e Tecnologias Sociais', vamos explorar a riqueza natural do nosso país e da nossa região além das inovações que nos conectam ao meio ambiente. Junte-se a nós nessa jornada de conhecimento e sustentabilidade!">
+    content="23ª Semana Nacional de Ciência e Tecnologia (SNCT) no IFPI Campus Pedro II! Com o tema 'A ciência é delas, é com elas, e é para todos nós.', a 23ª Semana Nacional de Ciência e Tecnologia convoca a sociedade brasileira para um diálogo sobre o tema “Ciência Delas”. Mais do que uma celebração, é um manifesto pela excelência científica e pelo desenvolvimento soberano do país, que reconhece que não há inovação plena sem a participação equitativa de meninas e mulheres.">
 
   <!-- Favicon -->
-  <link rel="icon" href="pages/assets/Css/images/android-icon-192x192.png" type="image/x-icon">
+  <link rel="icon" href="pages/assets/Css/images/23-SNCT-ICON.png" type="image/x-icon">
 
-  <!-- Outros meta tags recomendados -->
+
   <meta name="robots" content="index, follow">
   <meta name="author" content="SNCT">
   <meta property="og:title" content="SNCTP2">
-  <meta property="og:description" content="21ª Semana Nacional de Ciência e Tecnologia 🌎🌱
-    IFPI - CAMPUS PEDRO II">
-  <meta property="og:image" content="pages/assets/Css/images/SNCT banner .png">
-  <meta property="og:url" content="https://www.snctp2.org">
+  <meta property="og:description" content="23ª Semana Nacional de Ciência e Tecnologia IFPI - CAMPUS PEDRO II">
+  <meta property="og:image" content="pages/assets/Css/images/ciencia_delas.png">
+  <meta property="og:url" content="https://snctp2.github.io/snctP2/">
   <meta property="og:type" content="website">
 
 
@@ -45,7 +43,7 @@
       <div class="container-fluid bg-body-tertiary" id="nav-bar">
 
         <a class="navbar-brand" href="index.html">
-          <img src="pages/assets/Css/images/logo-branca.png" width="220" height="100">
+          <img src="pages/assets/Css/images/logo-branca.png" width="260" height="100">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -61,26 +59,34 @@
           <div class="me-auto mb-2 mb-lg-0"></div>
 
           <ul class="nav navbar-nav nav-underline ">
-            <li class="nav-item">
-                <a class="nav-link" href="ficto.html">FICTO 2025</a>
-            </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    FICTO
+                  </a>
+                  <ul class="dropdown-menu custom-nav-dropdown">
+                    <li><a class="dropdown-item disabled" href="ficto.html?ano=2026">FICTO 2026</a></li>
+                    <li><a class="dropdown-item" href="ficto.html?ano=2025">FICTO 2025</a></li>
+                  </ul>
+              </li>
               <li class="nav-item">
-                  <a class="nav-link" href="submissao.html">Submissão de Projetos 2025</a>
+                  <a class="nav-link disabled" href="submissao.html?ano=2026">Submissão de Projetos 2026</a>
               </li>
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Mídias
                   </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="midia2025.html">Mídias 2025</a></li>
-                    <li><a class="dropdown-item" href="midia2024.html">Mídias 2024</a></li>
+                  <ul class="dropdown-menu custom-nav-dropdown">
+                    <li><a class="dropdown-item" href="midia.html?ano=2026">Mídias 2026</a></li>
+                    <li><a class="dropdown-item" href="midia.html?ano=2025">Mídias 2025</a></li>
+                    <li><a class="dropdown-item" href="midia.html?ano=2024">Mídias 2024</a></li>
                   </ul>
               </li>
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Programação
                   </a>
-                  <ul class="dropdown-menu">
+                  <ul class="dropdown-menu custom-nav-dropdown">
+                    <li><a class="dropdown-item" href="programacao.html?ano=2026">Programação 2026</a></li>
                     <li><a class="dropdown-item" href="programacao.html?ano=2025">Programação 2025</a></li>
                     <li><a class="dropdown-item" href="programacao.html?ano=2024">Programação 2024</a></li>
                   </ul>
@@ -99,43 +105,48 @@
   <main  class="main-content">
 
     <div class="container-fluid my-1 imageGrande">
-      <img class="d-block w-100 my-5-6" src="pages/assets/Css/images/artesnct22.png" alt="">
+      <img class="d-block w-100 my-5-6" src="pages/assets/Css/images/ciencia_delas1.png" alt="">
     </div>
 
-    <div class="container-btn">
-      <a href="https://suap.ifpi.edu.br/eventos/inscricao/1/3073/">
-			  <button
-					  type="button"
-					  class="btn btn-green btn-index"
-					  style="--bs-btn-padding-y: 1.5rem; --bs-btn-padding-x: 3rem; --bs-btn-font-size: 1.5rem;--bs-border-radius: 3rem; margin-top: 2em;"
-					  >
-					  INSCREVA-SE
-			  </button>
-	  </a>
-    </div>
-    <h3>INSCRIÇÃO PARA 22 SEMANA NACIONAL DE CIÊNCIA E TECNOLOGIA EM PEDRO II</h3>
+    <section class="intro-snct">
+      <div class="intro-snct__content">
+        <h3 class="intro-snct__title">INSCRIÇÃO PARA 23 SEMANA NACIONAL DE CIÊNCIA E TECNOLOGIA EM PEDRO II</h3>
 
-    <h3 class="saibamais">SAIBA MAIS SOBRE O PROJETO</h3>
+        <h2 class="saibamais">SAIBA MAIS SOBRE O PROJETO</h2>
 
-    <p class="sobre"> A Semana Nacional de Ciência e Tecnologia (SNCT) é um evento anual promovido no Brasil com o
-      objetivo de popularizar a ciência.
-      Durante a SNCT, são realizadas diversas ações, como palestras, oficinas, exposições, feiras científicas, workshops
-      e experimentos interativos, organizados por instituições de ensino, centros de pesquisa, museus de ciência,
-      empresas e entidades governamentais. O evento abrange temas variados, que são definidos a cada edição e
-      relacionados a questões científicas e tecnológicas de relevância para o desenvolvimento social e econômico do
-      país. Um dos principais objetivos da SNCT é aproximar a ciência da realidade cotidiana das pessoas, mostrando como
-      as inovações tecnológicas impactam e melhoram a vida em sociedade.
-    </p>
-    <p class="sobre"> Além disso, busca estimular a formação de novos cientistas, engenheiros e
-      profissionais da área tecnológica, fomentando a curiosidade e o interesse pelo conhecimento científico em crianças
-      e jovens. A SNCT tem um caráter inclusivo e democrático, sendo acessível a pessoas de todas as idades e de
-      diferentes níveis de formação. Ao promover uma interação direta entre cientistas e o público, a Semana Nacional de
-      Ciência e Tecnologia contribui para aumentar a conscientização sobre a importância da ciência para o
-      desenvolvimento sustentável, o combate às desigualdades e o enfrentamento dos desafios globais, como as mudanças
-      climáticas, a saúde pública e a inovação tecnológica. Em suma, a SNCT é uma iniciativa essencial para fortalecer a
-      cultura científica no Brasil, incentivando a participação ativa da população nas discussões sobre ciência e
-      tecnologia, e preparando as futuras gerações para lidar com os avanços e desafios do mundo moderno.
-    </p>
+        <p class="sobre"> A Semana Nacional de Ciência e Tecnologia (SNCT) é um evento anual promovido no Brasil com o
+          objetivo de popularizar a ciência.
+          Durante a SNCT, são realizadas diversas ações, como palestras, oficinas, exposições, feiras científicas, workshops
+          e experimentos interativos, organizados por instituições de ensino, centros de pesquisa, museus de ciência,
+          empresas e entidades governamentais. O evento abrange temas variados, que são definidos a cada edição e
+          relacionados a questões científicas e tecnológicas de relevância para o desenvolvimento social e econômico do
+          país. Um dos principais objetivos da SNCT é aproximar a ciência da realidade cotidiana das pessoas, mostrando como
+          as inovações tecnológicas impactam e melhoram a vida em sociedade.
+          <br><br>
+          Além disso, busca estimular a formação de novos cientistas, engenheiros e
+          profissionais da área tecnológica, fomentando a curiosidade e o interesse pelo conhecimento científico em crianças
+          e jovens. A SNCT tem um caráter inclusivo e democrático, sendo acessível a pessoas de todas as idades e de
+          diferentes níveis de formação. Ao promover uma interação direta entre cientistas e o público, a Semana Nacional de
+          Ciência e Tecnologia contribui para aumentar a conscientização sobre a importância da ciência para o
+          desenvolvimento sustentável, o combate às desigualdades e o enfrentamento dos desafios globais, como as mudanças
+          climáticas, a saúde pública e a inovação tecnológica. Em suma, a SNCT é uma iniciativa essencial para fortalecer a
+          cultura científica no Brasil, incentivando a participação ativa da população nas discussões sobre ciência e
+          tecnologia, e preparando as futuras gerações para lidar com os avanços e desafios do mundo moderno.
+        </p>
+      </div>
+
+      <div class="container-btn">
+        <a href="https://suap.ifpi.edu.br/eventos/inscricao/1/3073/">
+          <button
+            type="button"
+            class="btn btn-purple btn-index my-btn-b"
+            style="--bs-btn-padding-y: 2rem; --bs-btn-padding-x: 3rem; --bs-btn-font-size: 1.5rem; --bs-border-radius: 2rem;"
+          >
+            INSCREVA-SE
+          </button>
+        </a>
+      </div>
+    </section>
 
   </main>
 
@@ -194,9 +205,7 @@
           </ul>
         </div>
       </div>
-      <div id="copyright">
-        &#169; 2024 Todos os direitos reservados
-      </div>
+ 
     </div>
 
   </footer>
