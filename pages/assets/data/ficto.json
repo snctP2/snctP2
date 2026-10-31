@@ -2,18 +2,39 @@
   "documentos": [
     {
       "title": "Edital",
-      "descricao": "Venha participar do ficto 2025, confira as regras logo abaixo no edital",
-      "edital": "pages/assets/Css/documents/edital-de-submissao-assinado.pdf"
+      "descricao": "Venha participar do FICTO 2025, confira as regras logo abaixo no edital.",
+      "edital": "pages/assets/documents/eventos/ficto_2025/ficto_2025_edital.pdf"
     },
     {
       "title": "Lista de trabalhos inscritos",
-      "descricao": "Lista de trabalhos inscritos",
-      "edital": "pages/assets/Css/documents/LISTA_PROJETOS_INSCRITOS_FICTO_-_Copia_assinado.pdf"
+      "descricao": "Lista de trabalhos inscritos do FICTO 2025.",
+      "edital": "pages/assets/documents/eventos/ficto_2025/ficto_2025_lista_trabalhos.pdf"
     },
     {
-      "title": "Templete do banner - FICTO",
-      "descricao": "Templete do banner - FICTO",
-      "edital": "pages/assets/Css/documents/Template - Banner-FICTO.pptx"
+      "title": "Template do banner - FICTO",
+      "descricao": "Template do banner do FICTO 2025.",
+      "edital": "pages/assets/documents/eventos/ficto_2025/ficto_2025_banner_template.pptx"
     }
+  ],
+  "trabalhos": [
+    { "posicao": 1, "caminho": "pages/assets/images/eventos/ficto_trabalhos_2025/ficto_2025_trabalho_01.png" },
+    { "posicao": 2, "caminho": "pages/assets/images/eventos/ficto_trabalhos_2025/ficto_2025_trabalho_02.png" },
+    { "posicao": 3, "caminho": "pages/assets/images/eventos/ficto_trabalhos_2025/ficto_2025_trabalho_03.png" },
+    { "posicao": 4, "caminho": "pages/assets/images/eventos/ficto_trabalhos_2025/ficto_2025_trabalho_04.png" },
+    { "posicao": 5, "caminho": "pages/assets/images/eventos/ficto_trabalhos_2025/ficto_2025_trabalho_05.png" },
+    { "posicao": 6, "caminho": "pages/assets/images/eventos/ficto_trabalhos_2025/ficto_2025_trabalho_06.png" },
+    { "posicao": 7, "caminho": "pages/assets/images/eventos/ficto_trabalhos_2025/ficto_2025_trabalho_07.png" },
+    { "posicao": 8, "caminho": "pages/assets/images/eventos/ficto_trabalhos_2025/ficto_2025_trabalho_08.png" }
+  ],
+  "bonelle": [
+    { "posicao": 1, "caminho": "pages/assets/images/eventos/ficto_praca_2025/snct_01.jpeg" },
+    { "posicao": 2, "caminho": "pages/assets/images/eventos/ficto_praca_2025/snct_02.jpeg" },
+    { "posicao": 3, "caminho": "pages/assets/images/eventos/ficto_praca_2025/snct_03.jpeg" },
+    { "posicao": 4, "caminho": "pages/assets/images/eventos/ficto_praca_2025/snct_04.jpeg" },
+    { "posicao": 5, "caminho": "pages/assets/images/eventos/ficto_praca_2025/snct_05.jpeg" },
+    { "posicao": 6, "caminho": "pages/assets/images/eventos/ficto_praca_2025/snct_06.jpeg" },
+    { "posicao": 7, "caminho": "pages/assets/images/eventos/ficto_praca_2025/snct_07.jpeg" },
+    { "posicao": 8, "caminho": "pages/assets/images/eventos/ficto_praca_2025/snct_08.jpeg" },
+    { "posicao": 9, "caminho": "pages/assets/images/eventos/ficto_praca_2025/snct_09.jpeg" }
   ]
 }

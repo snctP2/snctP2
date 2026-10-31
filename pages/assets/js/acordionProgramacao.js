@@ -15,7 +15,6 @@ async function fetchItems(ano) {
     const accordion = document.getElementById('accordionExample');
     try {
         const arquivos = [
-            `pages/assets/data/programacao_${ano}.json`,
             'pages/assets/data/programacao.json'
         ];
 

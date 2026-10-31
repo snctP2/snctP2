@@ -1,5 +1,72 @@
 const DATA_DIR = 'pages/assets/data/';
-const MEDIA_DIR = 'pages/assets/Css/images/';
+const MEDIA_DIR = 'pages/assets/images/eventos/';
+
+function getEventMediaDirectory(event) {
+  if (!event) return '';
+
+  const tema = (event.tema || '').toLowerCase();
+  const data = event.data_evento || '';
+
+  if (data === '2024-10-16' || tema.includes('meliponicultura')) return `${MEDIA_DIR}nazare_16_10_24/`;
+  if (data === '2024-10-25' && tema.includes('abertura')) return `${MEDIA_DIR}abertura_2024/`;
+  if (data === '2024-10-25' && tema.includes('mesa redonda')) return `${MEDIA_DIR}mesa_redonda_25_10_2024/`;
+  if (data === '2024-10-30' || tema.includes('lagoa')) return `${MEDIA_DIR}lagoa_SF_30_10_2024/`;
+  if (data === '2024-11-14' || tema.includes('milton')) return `${MEDIA_DIR}milton_brandao_14_11_2024/`;
+  if (data === '2024-11-22' || tema.includes('praça') || tema.includes('praca')) return `${MEDIA_DIR}snct_praca_22_11_2024/`;
+  if (data === '2025-02-11' || tema.includes('7 cidades')) return `${MEDIA_DIR}parque_7_cidades_11_02_2025/`;
+  if (data === '2025-11-27' || tema.includes('auditorio')) return `${MEDIA_DIR}ficto_auditorio_27_11_2025/`;
+  if (tema.includes('ficto') || tema.includes('trabalho')) return `${MEDIA_DIR}ficto_praca_2025/`;
+
+  return '';
+}
+
+function buildMediaCandidates(rawUrl, eventDir = '') {
+  if (!rawUrl || rawUrl.startsWith('http') || rawUrl.startsWith('data:') || rawUrl.startsWith('<')) {
+    return rawUrl ? [rawUrl] : [];
+  }
+
+  const normalizedUrl = rawUrl.replace(/^\/+/, '');
+  const basename = normalizedUrl.split('/').pop();
+  if (!basename) return [];
+
+  const candidates = new Set([rawUrl, normalizedUrl]);
+
+  if (eventDir) candidates.add(`${eventDir}${basename}`);
+
+  const fallbackDirs = [
+    `${MEDIA_DIR}abertura_2024/`,
+    `${MEDIA_DIR}ficto_auditorio_27_11_2025/`,
+    `${MEDIA_DIR}ficto_praca_2025/`,
+    `${MEDIA_DIR}lagoa_SF_30_10_2024/`,
+    `${MEDIA_DIR}mesa_redonda_25_10_2024/`,
+    `${MEDIA_DIR}milton_brandao_14_11_2024/`,
+    `${MEDIA_DIR}nazare_16_10_24/`,
+    `${MEDIA_DIR}parque_7_cidades_11_02_2025/`,
+    `${MEDIA_DIR}snct_praca_2024/`
+  ];
+
+  fallbackDirs.forEach(dir => candidates.add(`${dir}${basename}`));
+  return [...candidates];
+}
+
+async function resolveMediaSource(rawUrl, eventDir = '') {
+  if (!rawUrl || rawUrl.startsWith('http') || rawUrl.startsWith('data:') || rawUrl.startsWith('<')) {
+    return rawUrl;
+  }
+
+  const candidates = buildMediaCandidates(rawUrl, eventDir);
+
+  for (const candidate of candidates) {
+    try {
+      const response = await fetch(candidate, { method: 'HEAD' });
+      if (response.ok) return candidate;
+    } catch (error) {
+      // Ignora caminhos inexistentes e tenta o próximo candidato.
+    }
+  }
+
+  return rawUrl;
+}
 
 /* ---------- Slideshow ---------- */
 function showSlide(n, slideshow) {
@@ -31,15 +98,17 @@ function formatarData(iso) {
   return new Date(y, m - 1, d).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long' });
 }
 
-function mediaHTML(m) {
+async function mediaHTML(m, event) {
+  const eventDir = getEventMediaDirectory(event);
+  const resolvedUrl = await resolveMediaSource(m.url, eventDir);
+
   if (m.tipo === 'foto') {
-    return `<div class="mySlideVideo"><img src="${MEDIA_DIR}${m.url}" class="d-block w-100" alt="Imagem"></div>`;
+    return `<div class="mySlideVideo"><img src="${resolvedUrl}" class="d-block w-100" alt="Imagem"></div>`;
   }
   if (m.tipo === 'video') {
-    return `<div class="mySlideVideo"><video class="d-block w-100" src="${MEDIA_DIR}${m.url}" autoplay loop muted controls>Seu navegador não suporta a tag de vídeo.</video></div>`;
+    return `<div class="mySlideVideo"><video class="d-block w-100" src="${resolvedUrl}" autoplay loop muted controls>Seu navegador não suporta a tag de vídeo.</video></div>`;
   }
   if (m.tipo === 'embed') {
-    // "url" contém o código embed completo (ex.: blockquote do Instagram, iframe do YouTube)
     return `<div class="mySlideVideo">${m.url}</div>`;
   }
   return '';
@@ -68,14 +137,15 @@ async function fetchEventosPorAno(ano) {
       return;
     }
 
-    eventos.forEach((ev, i) => {
+    for (const [i, ev] of eventos.entries()) {
       const id = `slideshow${ano}_${i}`;
       const wrap = document.createElement('div');
       const midias = ev.midias || [];
 
       let inner;
       if (midias.length) {
-        inner = midias.map(mediaHTML).join('') + `
+        const slides = await Promise.all(midias.map(async (m) => mediaHTML(m, ev)));
+        inner = slides.join('') + `
           <a class="prev" onclick="passaSlide(-1, '${id}')">❮</a>
           <a class="next" onclick="passaSlide(1, '${id}')">❯</a>`;
       } else {
@@ -90,7 +160,7 @@ async function fetchEventosPorAno(ano) {
       container.appendChild(wrap);
 
       if (midias.length) showSlide(0, id);
-    });
+    }
 
     if (window.instgrm) instgrm.Embeds.process();
   } catch (e) {
